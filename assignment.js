@@ -150,7 +150,7 @@ function perfectFriend(friends) {
     return newName[0];
 }
 
-let friendsName = ['reja', 'reka', 'shuvo', 'kamal', 'habibulla', 'sagor']
+let friendsName = ['reja', 'reka', 'shuvo', 'kamal', 'habibulla', 'sagor'];
 
 // call function
 const friendName = perfectFriend(friendsName);
