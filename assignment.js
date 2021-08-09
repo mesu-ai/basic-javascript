@@ -21,7 +21,7 @@ function seerToMon(seer) {
 }
 
 
-let seer = 40;
+let seer = 100;
 //call function
 const mon = seerToMon(seer);
 console.log(mon);
@@ -112,7 +112,7 @@ function deliveryCost(quantity) {
 
 }
 
-let quantity = 220;
+let quantity = 210;
 
 //call function
 const totalCost = deliveryCost(quantity);
@@ -125,25 +125,32 @@ console.log(totalCost);
 //problem-4
 function perfectFriend(friends) {
 
-
-    let name = '';
-
-    for (const friend of friends) {
-
-        //check length of element
-        if (friend.length == 5) {
-
-            name = friend;
-            return name;
-
-        }
+    //check object validity
+    if (typeof (friends) != 'object') {
+        errorMassage = 'Input valid name object !';
+        return errorMassage;
 
     }
 
+    let newName = [];
+    for (const friend of friends) {
+
+        //check string or not
+        if (typeof (friend) != 'string') {
+            errorMassage = 'Input valid name !';
+            return errorMassage;
+        }
+
+        //check length of element
+        else if (friend.length == 5) {
+            newName.push(friend);
+        }
+    }
+
+    return newName[0];
 }
 
-//friend name array
-let friendsName = ['reja', 'reka', 'shuvo', 'kamal', 'habibulla', 'sagor'];
+let friendsName = ['reja', 'reka', 'shuvo', 'kamal', 'habibulla', 'sagor']
 
 // call function
 const friendName = perfectFriend(friendsName);
